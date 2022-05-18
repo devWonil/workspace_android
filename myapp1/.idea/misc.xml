@@ -4,6 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/workspace_android/myapp1/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/workspace_android/myapp1/app/src/main/res/layout/frame_layout01.xml" value="0.3515625" />
+        <entry key="..\:/workspace_android/myapp1/app/src/main/res/layout/frame_layout02.xml" value="0.36614583333333334" />
+        <entry key="..\:/workspace_android/myapp1/app/src/main/res/layout/linear_layout.xml" value="0.33" />
+        <entry key="..\:/workspace_android/myapp1/app/src/main/res/layout/linear_layout2.xml" value="0.3515625" />
+        <entry key="..\:/workspace_android/myapp1/app/src/main/res/layout/linear_layout3.xml" value="0.36614583333333334" />
+        <entry key="..\:/workspace_android/myapp1/app/src/main/res/layout/linear_layout4.xml" value="0.36614583333333334" />
+        <entry key="..\:/workspace_android/myapp1/app/src/main/res/layout/linear_layout5.xml" value="0.36614583333333334" />
+        <entry key="..\:/workspace_android/myapp1/app/src/main/res/layout/linear_layout6.xml" value="0.36614583333333334" />
+        <entry key="..\:/workspace_android/myapp1/app/src/main/res/layout/relative_layout01.xml" value="0.3515625" />
+        <entry key="..\:/workspace_android/myapp1/app/src/main/res/layout/relative_layout02.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>
