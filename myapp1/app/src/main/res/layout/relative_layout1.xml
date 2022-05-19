@@ -3,19 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<!--
-    LinearLayout 은 자식 뷰들을 수직이나 수평으로 배치할 수 있는 뷰 컴포넌트였다면 RelativeLayout은
-    상대 레이아웃이다.
-
-    즉, 기준이 있어야 한다.
-    1. (화면, 부모 뷰)가 기준이 된다
-    2. 특정한 뷰를 지정해서 사용한다.
-
-    부모 뷰 기준으로 처리하는 방법
-    (Parent가 들어가는 속성)
-    (Center가 들어가는 속성)
-    -->
-    <!--   Parent 가 들어가는 속성  -->
     <TextView
         android:background="@color/purple_200"
         android:layout_width="50dp"
@@ -23,19 +10,19 @@
 
     <TextView
         android:layout_alignParentEnd="true"
-        android:background="#FF5722"
+        android:background="@color/teal_200"
         android:layout_width="50dp"
         android:layout_height="50dp"/>
 
     <TextView
         android:layout_alignParentBottom="true"
-        android:background="#8BC34A"
+        android:background="@color/myColor"
         android:layout_width="50dp"
         android:layout_height="50dp"/>
 
     <TextView
         android:layout_centerInParent="true"
-        android:background="#E91E63"
+        android:background="@color/teal_700"
         android:layout_width="50dp"
         android:layout_height="50dp"/>
 
@@ -46,33 +33,23 @@
         android:layout_width="50dp"
         android:layout_height="50dp"/>
 
-    <!--   Center 가 들어가는 속성  -->
-
     <TextView
-        android:layout_centerHorizontal="true"
-        android:background="#FFC107"
+        android:background="@color/purple_200"
         android:layout_width="50dp"
         android:layout_height="50dp"/>
 
     <TextView
-        android:layout_centerVertical="true"
-        android:background="@color/teal_700"
+        android:background="@color/purple_200"
         android:layout_width="50dp"
         android:layout_height="50dp"/>
 
-    <!-- 문제1   -->
     <TextView
-        android:layout_alignParentRight="true"
-        android:layout_centerInParent="true"
-        android:background="#2196F3"
+        android:background="@color/purple_200"
         android:layout_width="50dp"
         android:layout_height="50dp"/>
 
-    <!-- 문제2   -->
     <TextView
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:background="@color/teal_200"
+        android:background="@color/purple_200"
         android:layout_width="50dp"
         android:layout_height="50dp"/>
 </RelativeLayout>
