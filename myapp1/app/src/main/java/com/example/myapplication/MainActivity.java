@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView equal;
     private TextView ca;
     private TextView result;
+    boolean flag = true;
 
     String newValue = "0";
     String oldValue = "0";
@@ -129,19 +130,38 @@ public class MainActivity extends AppCompatActivity {
             oldValue = String.valueOf(sum);
             newValue = "0";
             result.setText(oldValue);
+
+//            newValue = newValue + "+";
+//            result.setText(newValue);
         });
 
         subtract.setOnClickListener(view -> {
-            
+            int number1 = Integer.parseInt(newValue);
+            int number2 = Integer.parseInt(oldValue);
+            int sum = (number2 - number1);
+            if(flag){
+                sum = (-sum);
+                flag =! flag;
+            }
+            Log.d(TAG, "number1 : " + number1);
+            Log.d(TAG, "number2 : " + number2);
+            Log.d(TAG, "sum : " + sum);
+            oldValue = String.valueOf(sum);
+            newValue = "0";
+            result.setText(oldValue);
 
+//            newValue = newValue + "-";
+//            result.setText(newValue);
         });
 
         multiply.setOnClickListener(view -> {
-
+            newValue = newValue + "*";
+            result.setText(newValue);
         });
 
         divide.setOnClickListener(view -> {
-
+            newValue = newValue + "÷";
+            result.setText(newValue);
         });
 
         equal.setOnClickListener(view -> {
