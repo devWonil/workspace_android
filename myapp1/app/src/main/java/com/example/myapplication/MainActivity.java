@@ -65,7 +65,12 @@ public class MainActivity extends AppCompatActivity {
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                newValue = newValue + "1";
+                int nv = Integer.parseInt(newValue);
+                if (nv == 0){
+                    newValue = "1";
+                }else {
+                    newValue = newValue + "1";
+                }
                 result.setText(newValue);
             }
         });
@@ -73,48 +78,93 @@ public class MainActivity extends AppCompatActivity {
         two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                newValue = newValue + "2";
+                int nv = Integer.parseInt(newValue);
+                if (nv == 0){
+                    newValue = "2";
+                }else {
+                    newValue = newValue + "2";
+                }
                 result.setText(newValue);
             }
         });
 
         three.setOnClickListener(view -> {
-            newValue = newValue + "3";
+            int nv = Integer.parseInt(newValue);
+            if (nv == 0){
+                newValue = "3";
+            }else {
+                newValue = newValue + "3";
+            }
             result.setText(newValue);
         });
 
         four.setOnClickListener(view -> {
-            newValue = newValue + "4";
+            int nv = Integer.parseInt(newValue);
+            if (nv == 0){
+                newValue = "4";
+            }else {
+                newValue = newValue + "4";
+            }
             result.setText(newValue);
         });
 
         five.setOnClickListener(view -> {
-            newValue = newValue + "5";
+            int nv = Integer.parseInt(newValue);
+            if (nv == 0){
+                newValue = "5";
+            }else {
+                newValue = newValue + "5";
+            }
             result.setText(newValue);
         });
 
         six.setOnClickListener(view -> {
-            newValue = newValue + "6";
+            int nv = Integer.parseInt(newValue);
+            if (nv == 0){
+                newValue = "6";
+            }else {
+                newValue = newValue + "6";
+            }
             result.setText(newValue);
         });
 
         seven.setOnClickListener(view -> {
-            newValue = newValue + "7";
+            int nv = Integer.parseInt(newValue);
+            if (nv == 0){
+                newValue = "7";
+            }else {
+                newValue = newValue + "7";
+            }
             result.setText(newValue);
         });
 
         eight.setOnClickListener(view -> {
-            newValue = newValue + "8";
+            int nv = Integer.parseInt(newValue);
+            if (nv == 0){
+                newValue = "8";
+            }else {
+                newValue = newValue + "8";
+            }
             result.setText(newValue);
         });
 
         nine.setOnClickListener(view -> {
-            newValue = newValue + "9";
+            int nv = Integer.parseInt(newValue);
+            if (nv == 0){
+                newValue = "9";
+            }else {
+                newValue = newValue + "9";
+            }
             result.setText(newValue);
         });
 
         zero.setOnClickListener(view -> {
-            newValue = newValue + "0";
+            int nv = Integer.parseInt(newValue);
+            if (nv == 0){
+                newValue = "0";
+            }else {
+                newValue = newValue + "0";
+            }
             result.setText(newValue);
         });
 
@@ -128,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, "number2 : " + number2);
             Log.d(TAG, "sum : " + sum);
             oldValue = String.valueOf(sum);
-            newValue = "0";
+            newValue = "0"; // 초기화
             result.setText(oldValue);
 
 //            newValue = newValue + "+";
@@ -172,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
             newValue = "0";
             oldValue = "0";
             result.setText("0");
+            flag = !flag;
         });
 
 
