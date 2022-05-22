@@ -57,13 +57,13 @@
             android:textSize="30dp" />
 
         <TextView
-            android:id="@+id/ca"
+            android:id="@+id/divide"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#6A78BF"
+            android:background="#5FA7E1"
             android:gravity="center"
-            android:text="CA"
+            android:text="÷"
             android:textSize="30dp" />
 
     </LinearLayout>
@@ -104,13 +104,13 @@
             android:textSize="30dp" />
 
         <TextView
-            android:id="@+id/divide"
+            android:id="@+id/multiply"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#94C7EF"
             android:gravity="center"
-            android:text="÷"
+            android:text="X"
             android:textSize="30dp" />
 
     </LinearLayout>
@@ -151,13 +151,13 @@
             android:textSize="30dp" />
 
         <TextView
-            android:id="@+id/multiply"
+            android:id="@+id/subtract"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#5FA7E1"
             android:gravity="center"
-            android:text="x"
+            android:text="-"
             android:textSize="30dp" />
 
     </LinearLayout>
@@ -168,13 +168,13 @@
         android:layout_weight="1">
 
         <TextView
-            android:id="@+id/equal"
+            android:id="@+id/ca"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#5FA7E1"
+            android:background="#6A78BF"
             android:gravity="center"
-            android:text="="
+            android:text="CA"
             android:textSize="30dp" />
 
         <TextView
@@ -188,23 +188,23 @@
             android:textSize="30dp" />
 
         <TextView
-            android:id="@+id/plus"
+            android:id="@+id/equal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#5FA7E1"
             android:gravity="center"
-            android:text="+"
+            android:text="="
             android:textSize="30dp" />
 
         <TextView
-            android:id="@+id/subtract"
+            android:id="@+id/plus"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#94C7EF"
             android:gravity="center"
-            android:text="-"
+            android:text="+"
             android:textSize="30dp" />
 
     </LinearLayout>

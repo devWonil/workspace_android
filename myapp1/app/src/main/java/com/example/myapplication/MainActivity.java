@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -29,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView ca;
     private TextView result;
     boolean flag = true;
+    private String arithmeticSymbol = "";
 
     String newValue = "0";
     String oldValue = "0";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,111 +64,61 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("initData 메서드 호출");
     }
 
+    private void takeAwayZero(String num){
+        int nv = Integer.parseInt(newValue);
+        if (nv == 0){
+            newValue = num;
+        }else {
+            newValue = newValue + num;
+        }
+        result.setText(newValue);
+    }
+
     private void addEventListener(){
         one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int nv = Integer.parseInt(newValue);
-                if (nv == 0){
-                    newValue = "1";
-                }else {
-                    newValue = newValue + "1";
-                }
-                result.setText(newValue);
+                takeAwayZero("1");
             }
         });
 
         two.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int nv = Integer.parseInt(newValue);
-                if (nv == 0){
-                    newValue = "2";
-                }else {
-                    newValue = newValue + "2";
-                }
-                result.setText(newValue);
+                takeAwayZero("2");
             }
         });
 
         three.setOnClickListener(view -> {
-            int nv = Integer.parseInt(newValue);
-            if (nv == 0){
-                newValue = "3";
-            }else {
-                newValue = newValue + "3";
-            }
-            result.setText(newValue);
+            takeAwayZero("3");
         });
 
         four.setOnClickListener(view -> {
-            int nv = Integer.parseInt(newValue);
-            if (nv == 0){
-                newValue = "4";
-            }else {
-                newValue = newValue + "4";
-            }
-            result.setText(newValue);
+            takeAwayZero("4");
         });
 
         five.setOnClickListener(view -> {
-            int nv = Integer.parseInt(newValue);
-            if (nv == 0){
-                newValue = "5";
-            }else {
-                newValue = newValue + "5";
-            }
-            result.setText(newValue);
+            takeAwayZero("5");
         });
 
         six.setOnClickListener(view -> {
-            int nv = Integer.parseInt(newValue);
-            if (nv == 0){
-                newValue = "6";
-            }else {
-                newValue = newValue + "6";
-            }
-            result.setText(newValue);
+            takeAwayZero("6");
         });
 
         seven.setOnClickListener(view -> {
-            int nv = Integer.parseInt(newValue);
-            if (nv == 0){
-                newValue = "7";
-            }else {
-                newValue = newValue + "7";
-            }
-            result.setText(newValue);
+            takeAwayZero("7");
         });
 
         eight.setOnClickListener(view -> {
-            int nv = Integer.parseInt(newValue);
-            if (nv == 0){
-                newValue = "8";
-            }else {
-                newValue = newValue + "8";
-            }
-            result.setText(newValue);
+            takeAwayZero("8");
         });
 
         nine.setOnClickListener(view -> {
-            int nv = Integer.parseInt(newValue);
-            if (nv == 0){
-                newValue = "9";
-            }else {
-                newValue = newValue + "9";
-            }
-            result.setText(newValue);
+            takeAwayZero("9");
         });
 
         zero.setOnClickListener(view -> {
-            int nv = Integer.parseInt(newValue);
-            if (nv == 0){
-                newValue = "0";
-            }else {
-                newValue = newValue + "0";
-            }
-            result.setText(newValue);
+            takeAwayZero("0");
         });
 
         plus.setOnClickListener(view -> {
@@ -180,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
             oldValue = String.valueOf(sum);
             newValue = "0"; // 초기화
             result.setText(oldValue);
-
+            arithmeticSymbol = "+";
 //            newValue = newValue + "+";
 //            result.setText(newValue);
         });
@@ -199,23 +152,123 @@ public class MainActivity extends AppCompatActivity {
             oldValue = String.valueOf(sum);
             newValue = "0";
             result.setText(oldValue);
-
+            arithmeticSymbol = "-";
 //            newValue = newValue + "-";
 //            result.setText(newValue);
         });
 
         multiply.setOnClickListener(view -> {
-            newValue = newValue + "*";
-            result.setText(newValue);
+            int number1 = Integer.parseInt(newValue);
+            int number2 = Integer.parseInt(oldValue);
+            if(flag){
+                number2 = 1;
+                flag =! flag;
+            }
+            int sum = (number2 * number1);
+
+            Log.d(TAG, "number1 : " + number1);
+            Log.d(TAG, "number2 : " + number2);
+            Log.d(TAG, "sum : " + sum);
+            oldValue = String.valueOf(sum);
+            newValue = "0";
+            result.setText(oldValue);
+            arithmeticSymbol = "*";
         });
 
         divide.setOnClickListener(view -> {
-            newValue = newValue + "÷";
-            result.setText(newValue);
+            int number1 = Integer.parseInt(newValue);
+            double number2 = Integer.parseInt(oldValue);
+            if(flag){
+                int sum = number1;
+                Log.d(TAG, "number1 : " + number1);
+                Log.d(TAG, "number2 : " + number2);
+                Log.d(TAG, "sum : " + sum);
+                oldValue = String.valueOf(sum);
+                newValue = "0";
+                result.setText(oldValue);
+                flag =! flag;
+            }else{
+                if(number1 == 0){
+                    Toast.makeText(getApplicationContext(), "0으로 나눌 수 없습니다", Toast.LENGTH_SHORT).show();
+                }else{
+                    double sum = (number2 / number1);
+                    Log.d(TAG, "number1 : " + number1);
+                    Log.d(TAG, "number2 : " + number2);
+                    Log.d(TAG, "sum : " + sum);
+                    oldValue = String.valueOf(sum);
+                    newValue = "0";
+                    result.setText(oldValue);
+                }
+            }
+            arithmeticSymbol = "/";
         });
 
         equal.setOnClickListener(view -> {
+            if(arithmeticSymbol.equals("+")){
+                int number1 = Integer.parseInt(newValue);
+                int number2 = Integer.parseInt(oldValue);
+                int sum = (number1 + number2);
+                Log.d(TAG, "number1 : " + number1);
+                Log.d(TAG, "number2 : " + number2);
+                Log.d(TAG, "sum : " + sum);
+                oldValue = String.valueOf(sum);
+                newValue = "0"; // 초기화
+                result.setText(oldValue);
+            } else if(arithmeticSymbol.equals("-")){
+                int number1 = Integer.parseInt(newValue);
+                int number2 = Integer.parseInt(oldValue);
+                int sum = (number2 - number1);
+                if(flag){
+                    sum = (-sum);
+                    flag =! flag;
+                }
+                Log.d(TAG, "number1 : " + number1);
+                Log.d(TAG, "number2 : " + number2);
+                Log.d(TAG, "sum : " + sum);
+                oldValue = String.valueOf(sum);
+                newValue = "0";
+                result.setText(oldValue);
+            } else if(arithmeticSymbol.equals("*")){
+                int number1 = Integer.parseInt(newValue);
+                int number2 = Integer.parseInt(oldValue);
+                if(flag){
+                    number2 = 1;
+                    flag =! flag;
+                }
+                int sum = (number2 * number1);
 
+                Log.d(TAG, "number1 : " + number1);
+                Log.d(TAG, "number2 : " + number2);
+                Log.d(TAG, "sum : " + sum);
+                oldValue = String.valueOf(sum);
+                newValue = "0";
+                result.setText(oldValue);
+            } else if(arithmeticSymbol.equals("/")){
+                int number1 = Integer.parseInt(newValue);
+                double number2 = Integer.parseInt(oldValue);
+                if(flag){
+                    int sum = number1;
+                    Log.d(TAG, "number1 : " + number1);
+                    Log.d(TAG, "number2 : " + number2);
+                    Log.d(TAG, "sum : " + sum);
+                    oldValue = String.valueOf(sum);
+                    newValue = "0";
+                    result.setText(oldValue);
+                    flag =! flag;
+                }else{
+                    if(number1 == 0){
+                        Toast.makeText(getApplicationContext(), "0으로 나눌 수 없습니다", Toast.LENGTH_SHORT).show();
+                    }else{
+                        double sum = (number2 / number1);
+                        Log.d(TAG, "number1 : " + number1);
+                        Log.d(TAG, "number2 : " + number2);
+                        Log.d(TAG, "sum : " + sum);
+                        oldValue = String.valueOf(sum);
+                        newValue = "0";
+                        result.setText(oldValue);
+                    }
+                }
+            }
         });
 
         ca.setOnClickListener(view -> {
