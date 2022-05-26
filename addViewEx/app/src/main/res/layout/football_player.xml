@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="7dp">
+
+    <ImageView
+        android:id="@+id/playerImageView"
+        android:layout_width="100dp"
+        android:layout_height="130dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/purple_200" />
+
+    <TextView
+        android:id="@+id/playerName"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="7dp"
+        android:text="Kylian Mbappe"
+        app:layout_constraintBottom_toTopOf="@+id/playerPosition"
+        app:layout_constraintStart_toEndOf="@+id/playerImageView"
+        app:layout_constraintTop_toTopOf="@+id/playerImageView"
+        android:textSize="17dp"/>
+
+    <TextView
+        android:id="@+id/playerPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="7dp"
+        android:text="Centre-Forward    23"
+        app:layout_constraintBottom_toTopOf="@id/playerNationality"
+        app:layout_constraintStart_toEndOf="@id/playerImageView"
+        app:layout_constraintTop_toBottomOf="@id/playerName"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/playerNationality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="7dp"
+        android:text="France"
+        app:layout_constraintBottom_toTopOf="@id/playerClub"
+        app:layout_constraintStart_toEndOf="@id/playerImageView"
+        app:layout_constraintTop_toBottomOf="@id/playerPosition"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/playerClub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="7dp"
+        android:text="Paris Saint-Germain"
+        app:layout_constraintBottom_toTopOf="@id/playerMarkerValue"
+        app:layout_constraintStart_toEndOf="@id/playerImageView"
+        app:layout_constraintTop_toBottomOf="@id/playerNationality"
+        android:textSize="15dp"/>
+
+    <TextView
+        android:id="@+id/playerMarkerValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="7dp"
+        android:text="€ 160m"
+        app:layout_constraintBottom_toBottomOf="@id/playerImageView"
+        app:layout_constraintStart_toEndOf="@id/playerImageView"
+        app:layout_constraintTop_toBottomOf="@id/playerClub"
+        android:textSize="15dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
