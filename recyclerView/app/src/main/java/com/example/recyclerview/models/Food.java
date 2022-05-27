@@ -51,6 +51,16 @@ public class Food implements Serializable {
         this.detail = detail;
     }
 
+    @Override
+    public String toString() {
+        return "Food{" +
+                "thumbnail='" + thumbnail + '\'' +
+                ", title='" + title + '\'' +
+                ", subTitle='" + subTitle + '\'' +
+                ", detail='" + detail + '\'' +
+                '}';
+    }
+
     public static ArrayList<Food> getSampleData() {
         ArrayList<Food> foods = new ArrayList<>();
         foods.add(new Food("https://cdn.pixabay.com/photo/2016/10/27/22/52/apples-1776744__340.jpg", "Food1", "SubTitle1", "detail"));
