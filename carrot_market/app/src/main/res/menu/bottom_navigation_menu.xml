@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/page_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/page_neighbor"
+
+        android:icon="@drawable/ic_baseline_content_copy_24"
+        android:title="동네생활"/>
+
+    <item
+        android:id="@+id/page_my_location"
+
+        android:icon="@drawable/ic_baseline_location_on_24"
+        android:title="내 근처"/>
+
+    <item
+        android:id="@+id/page_chat"
+
+        android:icon="@drawable/ic_baseline_chat_bubble_outline_24"
+        android:title="채팅"/>
+
+    <item
+        android:id="@+id/page_my_info"
+
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="나의 당근"/>
+</menu>
