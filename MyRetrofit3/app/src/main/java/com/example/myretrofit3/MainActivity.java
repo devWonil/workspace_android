@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btn4.setOnClickListener(view -> {
-            ReqPostDto reqPostDto = new ReqPostDto("회의", "db 설계", 10);
+            ReqPostDto reqPostDto = new ReqPostDto("제목 수정", "db 설계", 10);
             service.updatePost(reqPostDto).enqueue(new Callback<ResponsePostDto>() {
                 @Override
                 public void onResponse(Call<ResponsePostDto> call, Response<ResponsePostDto> response) {
