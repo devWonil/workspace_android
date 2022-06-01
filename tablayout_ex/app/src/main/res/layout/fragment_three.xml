@@ -3,16 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4CAF50"
     tools:context=".FragmentThree">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:gravity="center"
+    <ImageView
+        android:src="@drawable/actor3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fragment three" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

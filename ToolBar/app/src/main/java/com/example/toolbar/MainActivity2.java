@@ -17,34 +17,35 @@ import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    TextView textView;
+   TextView textView;
 
-    // 값을 돌려 받을 때 사용하는 코드
+   // 값을 돌려 받을 때 사용하는 코드
     ActivityResultLauncher<Intent> startActivityResult = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
-            result -> {
+           result -> {
                 Log.d("TAG", "comeback 돌아왔다");
                 if(result.getResultCode() == Activity.RESULT_OK){
-                    //정상 동작
+                    // 정상 동작
                     Intent data = result.getData();
                     int returnValue = data.getIntExtra("result", 0);
                     textView.setText(returnValue + "");
-                }else {
-                    //실패
+                }else{
+                    // 실패
                 }
-            }
-    );
+           }
+   );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-       Toolbar toolbar = findViewById(R.id.toolBar);
-       //toolbar.setTitle("");
+        Toolbar toolbar = findViewById(R.id.toolBar);
+        //toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
         textView = findViewById(R.id.tempTextView);
+
     }
 
     @Override
@@ -63,17 +64,16 @@ public class MainActivity2 extends AppCompatActivity {
                 // 값을 돌려 받지 않을 때
                 //startActivity(intent);
 
-                // 값을 돌려 받아야 될 때
+                // 값을 돌려 받아야 할 때
                 startActivityResult.launch(intent);
                 break;
             case R.id.menuItem2:
-                Log.d("TAG", "2번 클릭");
+                Log.d("TAG", "2번클릭");
                 break;
             case R.id.menuItem3:
-                Log.d("TAG", "3번 클릭");
+                Log.d("TAG", "3번클릭");
                 break;
         }
-
         return true;
     }
 }
