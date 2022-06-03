@@ -77,4 +77,13 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/posterIv"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/round_image" />
 </FrameLayout>
