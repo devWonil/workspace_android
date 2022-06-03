@@ -2,6 +2,7 @@ package com.example.movie_1.adapter;
 
 // 내부 클래스 먼저 만들기
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.FitCenter;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.movie_1.R;
+import com.example.movie_1.interfaces.OnMovieItemClicked;
 import com.example.movie_1.models.Movie;
 
 import java.util.ArrayList;
@@ -24,12 +26,25 @@ import java.util.List;
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder> {
 
     private List<Movie> list = new ArrayList<>();
+    private OnMovieItemClicked onMovieItemClicked;
 
+    public void setOnMovieItemClicked(OnMovieItemClicked onMovieItemClicked) {
+        this.onMovieItemClicked = onMovieItemClicked;
+    }
     // 통신 배우기전 생성자에 데이터를 전달 받아서 화면을 구성
     // 통신이기 때문에 화면을 그리는 시점보다 더 늦게 데이터가 도달 할 수 있다.
 
-    public void addItemList(List<Movie> list) {
+    public void initItemList(List<Movie> list) {
         this.list = list;
+        notifyDataSetChanged();
+    }
+
+    public void addItem(List<Movie> addList) {
+        // list.size() --> 0
+        // list.size() --> 10
+        // list.size() --> 20
+        // list.size() --> 30
+        this.list.addAll(list.size(), addList);
         notifyDataSetChanged();
     }
 
@@ -62,6 +77,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
         // 2. view holder 안에서 세팅
         // 메서드 (movie)
         holder.setItem(movie);
+        holder.itemView.setOnClickListener(view -> {
+            onMovieItemClicked.selectedItem(movie);
+        });
     }
 
     @Override
@@ -101,6 +119,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
                     .placeholder(R.drawable.round_image)
                     .transform(new FitCenter(), new RoundedCorners(20))
                     .into(posterIv);
+
+            itemView.setOnClickListener(view -> {
+                Log.d("TAG", "" + view.getContext());
+            });
         }
     }
 }
