@@ -3,12 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/workspace_android/Movie_1/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/workspace_android/Movie_1/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.2" />
+        <entry key="..\:/workspace_android/Movie_1/app/src/main/res/layout/activity_main.xml" value="0.13703703703703704" />
         <entry key="..\:/workspace_android/Movie_1/app/src/main/res/layout/activity_main2.xml" value="0.2921875" />
-        <entry key="..\:/workspace_android/Movie_1/app/src/main/res/layout/activity_movie_detail.xml" value="0.36614583333333334" />
+        <entry key="..\:/workspace_android/Movie_1/app/src/main/res/layout/activity_movie_detail.xml" value="0.15416666666666667" />
         <entry key="..\:/workspace_android/Movie_1/app/src/main/res/layout/activity_splash.xml" value="0.36614583333333334" />
         <entry key="..\:/workspace_android/Movie_1/app/src/main/res/layout/fragment_info.xml" value="0.27760416666666665" />
-        <entry key="..\:/workspace_android/Movie_1/app/src/main/res/layout/fragment_movie.xml" value="0.27760416666666665" />
+        <entry key="..\:/workspace_android/Movie_1/app/src/main/res/layout/fragment_movie.xml" value="0.33" />
         <entry key="..\:/workspace_android/Movie_1/app/src/main/res/layout/item_movie_card.xml" value="0.33" />
         <entry key="..\:/workspace_android/Movie_1/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2921875" />
         <entry key="..\:/workspace_android/Movie_1/app/src/main/res/menu/top_app_bar.xml" value="0.2911458333333333" />

@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -87,7 +88,7 @@ public class MovieFragment extends Fragment implements OnMovieItemClicked {
             setVisibilityProgressBar(View.GONE);
         }
         // 화면 띄울 때 네트워크 요청
-        requestMoviesData(currentPageNumber);
+        //requestMoviesData(currentPageNumber);
         onChangeToolbarType.onSetupType(Define.PAGE_TITLE_MOVIE);
         // null pointer exception 이기 때문에 주소를 연결해준다 (누가 내 메소드를 콜백 받을지 연결)
         // 연결방법은 2가지 (1 생성자, 2 메소드)
@@ -98,12 +99,12 @@ public class MovieFragment extends Fragment implements OnMovieItemClicked {
 
         int ITEM_LIMIT = 10;
         Log.d(TAG, "통신 요청!");
-        movieService.repoContributors("rating", 10,  requestPage)
+        movieService.repoContributors("rating", ITEM_LIMIT,  requestPage)
                 .enqueue(new Callback<YtsData>() {
                     @Override
                     public void onResponse(Call<YtsData> call, Response<YtsData> response) {
                         if(response.isSuccessful()) {
-                            // 통신을 통해서 데이터를 넘겨받았으면 adapter에 데이터를 전닿해서 화면을 갱신처리
+                            // 통신을 통해서 데이터를 넘겨받았으면 adapter에 데이터를 전달해서 화면을 갱신처리
                             List<Movie> list = response.body().getData().getMovies();
                             // 어댑터에 메소드 호출
                             movieAdapter.addItem(list);
@@ -131,9 +132,10 @@ public class MovieFragment extends Fragment implements OnMovieItemClicked {
         // 2. 매니저 필요
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         // 3. xml 파일에 선언한 recyclerView에 세팅
-        binding.movieRecyclerView.setAdapter(movieAdapter);
-        binding.movieRecyclerView.setLayoutManager(manager);
-        binding.movieRecyclerView.hasFixedSize();
+        RecyclerView recyclerView = binding.movieRecyclerView;
+        recyclerView.setAdapter(movieAdapter);
+        recyclerView.setLayoutManager(manager);
+        recyclerView.hasFixedSize();
         // 이벤트 리스너
         binding.movieRecyclerView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
